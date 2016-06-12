@@ -1,0 +1,1 @@
+# condominiumApp-Ionic-IntelXDK
