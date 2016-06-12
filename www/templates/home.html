@@ -1,0 +1,56 @@
+<ion-view view-title="Condominium App">
+    <ion-content>
+        <div class="card">
+            <div class="item item-divider">
+                <p align=center>Residential Green Lake</p>
+            </div>
+            <div class="item item-body">
+                <img class="full-image" src="./images/condominium.jpg">
+            </div>
+            <div class="item item-divider">
+                <h4 align=center>Ready to wake up every morning to live the lake life?</h4>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+                <p align=center>Welcome to the Residential Green Lake</p>
+            </div>
+            <div class="item item-text-wrap">
+                <h5><strong>Our Address</strong></h5>
+                <h5>
+                    345 NE 67nd St.<br> Seattle, WA 67890<br> USA
+                    <br>
+                    <i class="icon ion-ios-telephone"></i>: +1 31 3333 3333<br>
+                    <i class="icon ion-ios-telephone-outline"></i>: +1 31 4444 4444<br>
+                    <i class="icon ion-ios-email"></i>:
+                    <a href="mailto:contact@condominiumapp.app">
+                        contact@condominiumapp.app</a>
+                </h5>
+                <h5><strong>Manager:</strong> Cláudio Costa</h5>
+                <h5><strong>Residents:</strong> {{residentsCount}}</h5>
+                <h5><strong>Buildings:</strong> {{buildingsCount}}</h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+                <p align=center>Public Notice Board</p>
+            </div>
+            <div class="item item-text-wrap">
+                <ng ng-repeat="noticeboard in noticeboards | orderBy:'-updatedAt'">
+                    <div class="card">
+                        <div class="item item-divider">
+                            <p align=center><strong>{{noticeboard.updatedAt | date:'medium'}}</strong></p>
+                        </div>
+                        <div class="item item-text-wrap">
+                            {{noticeboard.message}}
+                        </div>
+                        <div class="item item-divider">
+                            <p><strong>Author:</strong> {{noticeboard.author.firstname}} {{noticeboard.author.lastname}}</p>
+                            <p ng-if="noticeboard.recipient.firstname"><strong>Recipient:</strong> {{noticeboard.recipient.firstname}} {{noticeboard.recipient.lastname}}</p>
+                        </div>
+                    </div>
+                </ng>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

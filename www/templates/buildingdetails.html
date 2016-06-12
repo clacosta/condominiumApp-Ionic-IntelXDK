@@ -1,0 +1,24 @@
+<ion-view view-title="Buildings Details">
+    <ion-content>
+        <div class="card">
+            <div class="item item-body item-text-wrap">
+                <img class="full-image" ng-src="{{building.image}}" alt="{{building.name}}">
+                <h2><strong>Name:</strong> {{building.name}}</h2>
+                <h3><strong>Description:</strong> {{building.description}}</h3>
+            </div>
+        </div>
+        <div class="col-xs-12" ng-if="showResidentes">
+            <div class="item item-divider">
+                <h2>List of Residents</h2>
+            </div>
+            <div class="list">
+                <a class="item item-thumbnail-left" ng-repeat="resident in residentesBuilding" href="#/app/residents/{{resident._id}}">
+                    <img src="{{resident.image}}">
+                    <h2><strong>Name:</strong> {{resident.firstname}} {{resident.lastname}}</h2>
+                    <h3><strong>Phone:</strong> {{resident.phone}}</h3>
+                    <h3><strong>Build:</strong> {{resident.building.name}}</h3>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

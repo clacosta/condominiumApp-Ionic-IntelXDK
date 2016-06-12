@@ -1,0 +1,21 @@
+<ion-view view-title="Notice Boards">
+    <ion-content>
+        <div class="item item-divider">
+            <h2>List of Notices</h2>
+        </div>
+        <ng ng-repeat="noticeboard in noticeboards | orderBy:'-updatedAt'">
+            <div class="card">
+                <div class="item item-divider">
+                    <p align=center><strong>{{noticeboard.updatedAt | date:'medium'}}</strong></p>
+                </div>
+                <div class="item item-text-wrap">
+                    {{noticeboard.message}}
+                </div>
+                <div class="item item-divider">
+                    <p><strong>Author:</strong> {{noticeboard.author.firstname}} {{noticeboard.author.lastname}}</p>
+                    <p ng-if="noticeboard.recipient.firstname"><strong>Recipient:</strong> {{noticeboard.recipient.firstname}} {{noticeboard.recipient.lastname}}</p>
+                </div>
+            </div>
+        </ng>
+    </ion-content>
+</ion-view>

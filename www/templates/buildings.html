@@ -1,0 +1,14 @@
+<ion-view view-title="Buildings">
+    <ion-content>
+        <div class="item item-divider">
+            <h2>List of Buildings</h2>
+        </div>
+        <div class="list">
+            <a class="item item-thumbnail-left" ng-repeat="building in buildings" href="#/app/buildings/{{building._id}}">
+                <img src="{{building.image}}">
+                <h2><strong>Name:</strong> {{building.name}}</h2>
+                <h3><strong>Description:</strong> {{building.description}}</h3>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

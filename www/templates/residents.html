@@ -1,0 +1,15 @@
+<ion-view view-title="Residents">
+    <ion-content>
+        <div class="item item-divider">
+            <h2>List of Residents</h2>
+        </div>
+        <div class="list">
+            <a class="item item-thumbnail-left" ng-repeat="resident in residents" href="#/app/residents/{{resident._id}}">
+                <img src="{{resident.image}}">
+                <h2><strong>Name:</strong> {{resident.firstname}} {{resident.lastname}}</h2>
+                <h3><strong>Phone:</strong> {{resident.phone}}</h3>
+                <h3><strong>Build:</strong> {{resident.building.name}}</h3>
+            </a>
+        </div>                
+    </ion-content>
+</ion-view>

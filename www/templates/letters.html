@@ -1,0 +1,51 @@
+<ion-view view-title="Letters / Packages">
+    <ion-content>
+        <div class="item item-divider">
+            <h2>List of Letters and Packages</h2>
+        </div>
+        <div class="list card" ng-repeat="letter in letters | orderBy:'-updatedAt'">
+            <div class="item item-dark item-divider">
+                Date
+            </div>
+            <div class="item item-text-wrap">
+                {{letter.updatedAt | date:'medium'}}
+            </div>
+            <div class="item item-divider">
+                Building
+            </div>
+            <div class="item item-text-wrap">
+                {{letter.building.name}}
+            </div>
+            <div class="item item-divider">
+                Description
+            </div>
+            <div class="item item-text-wrap">
+                {{letter.description}}
+            </div>
+            <div class="item item-divider">
+                Tracking Code
+            </div>
+            <div class="item item-text-wrap">
+                {{letter.trackingcode}}
+            </div>
+            <div class="item item-divider">
+                Image
+            </div>
+            <div class="item item-text-wrap">
+                &nbsp;
+            </div>
+            <div class="item item-divider">
+                Author
+            </div>
+            <div class="item item-text-wrap">
+                {{letter.author.firstname}} {{letter.author.lastname}}
+            </div>
+            <div class="item item-divider">
+                Letter Status
+            </div>
+            <div class="item item-text-wrap">
+                {{letter.letterStatus}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
